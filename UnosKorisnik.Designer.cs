@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxIme = new System.Windows.Forms.TextBox();
-            this.txtBoxPrezime = new System.Windows.Forms.TextBox();
+            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtBoxAdresa = new System.Windows.Forms.TextBox();
+            this.txtAdresa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBrojTelefona = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.bntUnesi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,22 +44,22 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtBoxIme
+            // txtIme
             // 
-            this.txtBoxIme.Location = new System.Drawing.Point(6, 36);
-            this.txtBoxIme.Name = "txtBoxIme";
-            this.txtBoxIme.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxIme.TabIndex = 0;
+            this.txtIme.Location = new System.Drawing.Point(6, 36);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(200, 20);
+            this.txtIme.TabIndex = 0;
             // 
-            // txtBoxPrezime
+            // txtPrezime
             // 
-            this.txtBoxPrezime.AccessibleDescription = "";
-            this.txtBoxPrezime.AccessibleName = "";
-            this.txtBoxPrezime.Location = new System.Drawing.Point(6, 75);
-            this.txtBoxPrezime.Name = "txtBoxPrezime";
-            this.txtBoxPrezime.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxPrezime.TabIndex = 1;
-            this.txtBoxPrezime.Tag = "";
+            this.txtPrezime.AccessibleDescription = "";
+            this.txtPrezime.AccessibleName = "";
+            this.txtPrezime.Location = new System.Drawing.Point(6, 75);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(200, 20);
+            this.txtPrezime.TabIndex = 1;
+            this.txtPrezime.Tag = "";
             // 
             // txtEmail
             // 
@@ -68,12 +68,12 @@
             this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 2;
             // 
-            // txtBoxAdresa
+            // txtAdresa
             // 
-            this.txtBoxAdresa.Location = new System.Drawing.Point(6, 153);
-            this.txtBoxAdresa.Name = "txtBoxAdresa";
-            this.txtBoxAdresa.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxAdresa.TabIndex = 3;
+            this.txtAdresa.Location = new System.Drawing.Point(6, 153);
+            this.txtAdresa.Name = "txtAdresa";
+            this.txtAdresa.Size = new System.Drawing.Size(200, 20);
+            this.txtAdresa.TabIndex = 3;
             // 
             // label1
             // 
@@ -111,12 +111,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Adresa";
             // 
-            // textBox1
+            // txtBrojTelefona
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtBrojTelefona.Location = new System.Drawing.Point(6, 192);
+            this.txtBrojTelefona.Name = "txtBrojTelefona";
+            this.txtBrojTelefona.Size = new System.Drawing.Size(200, 20);
+            this.txtBrojTelefona.TabIndex = 8;
             // 
             // label5
             // 
@@ -135,16 +135,17 @@
             this.bntUnesi.TabIndex = 10;
             this.bntUnesi.Text = "Unesi";
             this.bntUnesi.UseVisualStyleBackColor = true;
+            this.bntUnesi.Click += new System.EventHandler(this.bntUnesi_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtBoxIme);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIme);
+            this.groupBox1.Controls.Add(this.txtBrojTelefona);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtBoxPrezime);
-            this.groupBox1.Controls.Add(this.txtBoxAdresa);
+            this.groupBox1.Controls.Add(this.txtPrezime);
+            this.groupBox1.Controls.Add(this.txtAdresa);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -163,6 +164,7 @@
             this.bntNazad.TabIndex = 12;
             this.bntNazad.Text = "Nazad";
             this.bntNazad.UseVisualStyleBackColor = true;
+            this.bntNazad.Click += new System.EventHandler(this.bntNazad_Click);
             // 
             // UnosKorisnik
             // 
@@ -182,15 +184,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBoxIme;
-        private System.Windows.Forms.TextBox txtBoxPrezime;
+        private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtBoxAdresa;
+        private System.Windows.Forms.TextBox txtAdresa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBrojTelefona;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bntUnesi;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -30,7 +30,7 @@
         {
             this.bntNazad = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listKnjige = new System.Windows.Forms.ListBox();
             this.bntSearch = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -44,10 +44,11 @@
             this.bntNazad.TabIndex = 15;
             this.bntNazad.Text = "Nazad";
             this.bntNazad.UseVisualStyleBackColor = true;
+            this.bntNazad.Click += new System.EventHandler(this.bntNazad_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.listKnjige);
             this.groupBox1.Controls.Add(this.bntSearch);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
@@ -57,13 +58,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Knjiga";
             // 
-            // listBox1
+            // listKnjige
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 64);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(762, 303);
-            this.listBox1.TabIndex = 3;
+            this.listKnjige.FormattingEnabled = true;
+            this.listKnjige.Location = new System.Drawing.Point(6, 64);
+            this.listKnjige.Name = "listKnjige";
+            this.listKnjige.Size = new System.Drawing.Size(762, 303);
+            this.listKnjige.TabIndex = 3;
             // 
             // bntSearch
             // 
@@ -100,7 +101,7 @@
 
         private System.Windows.Forms.Button bntNazad;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listKnjige;
         private System.Windows.Forms.Button bntSearch;
         private System.Windows.Forms.TextBox textBox2;
     }

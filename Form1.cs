@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO; // TEST!
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,64 +14,96 @@ namespace AplikacijaZaBiblioteku
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1() 
         {
             InitializeComponent();
+            //Finds the directory, which is located at @MainUserDisk://Users//@CurrentUserNamer//AppData//Local
             string mainFile = @"%LOCALAPPDATA%\AplikacijaZaBiblioteku";
             mainFile = Environment.ExpandEnvironmentVariables(mainFile);
-                
-            string XMLknjigaFile = mainFile+"\\Knjige.xml", XMLkorisnikFile = mainFile + "\\Korsnike.xml", XMLposudivanjeFile = mainFile + "\\Posudivanje.xml";
-            if (File.Exists(mainFile))
-            {
-                File.Create(mainFile);
+            //File locations for each file
+            string XMLknjigaFile = mainFile+"\\Knjige.xml", 
+                XMLkorisnikFile = mainFile + "\\Korisnike.xml", 
+                XMLposudivanjeFile = mainFile + "\\Evidencija.xml";
+            //Checks if the directory or file exist, if not creates it.
+            if (!Directory.Exists(mainFile))
+                Directory.CreateDirectory(mainFile);
+            if (!File.Exists(XMLknjigaFile))
                 File.Create(XMLknjigaFile);
+            if (!File.Exists(XMLkorisnikFile))
                 File.Create(XMLkorisnikFile);
+            if (!File.Exists(XMLposudivanjeFile))
                 File.Create(XMLposudivanjeFile);
-            }
         }
-
+        //Buttons to open new windows and makes the main window invisble until the subwindow closes
+        //TODO: see how to make this less bloated
         private void bntPregledKorsinik_Click(object sender, EventArgs e)
         {
             PregledKorsinik pregledKorsinik = new PregledKorsinik();
-            pregledKorsinik.Show();
+            this.Visible = false;
+            if (pregledKorsinik.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
 
         private void bntPregledKnijga_Click(object sender, EventArgs e)
         {
             PregledKnjige pregledKnjige = new PregledKnjige();
-            pregledKnjige.Show();
+            this.Visible = false;
+            if (pregledKnjige.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
 
         private void bntPregled_Click(object sender, EventArgs e)
         {
             PregledSvePodataka pregledSvePodataka = new PregledSvePodataka();
-            pregledSvePodataka.Show();
+            this.Visible = false;
+            if (pregledSvePodataka.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
 
         private void bntUnosKorsnik_Click(object sender, EventArgs e)
         {
             UnosKorisnik unosKorisnik = new UnosKorisnik();
-            unosKorisnik.Show();
+            this.Visible = false;
+            if (unosKorisnik.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
 
         private void bntUnosKnjiga_Click(object sender, EventArgs e)
         {
             UnosKnijga unosKnijga = new UnosKnijga();
-            unosKnijga.Show();
-            //DialogResult 
-
+            this.Visible = false;
+            if (unosKnijga.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
 
         private void bntUnosPosudivanje_Click(object sender, EventArgs e)
         {
             UnosPosudivanje unosPosudivanje = new UnosPosudivanje();
-            unosPosudivanje.Show();
+            this.Visible = false;
+            if (unosPosudivanje.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
 
         private void bntUnosVracanje_Click(object sender, EventArgs e)
         {
             UnosVracanjeKnjiga unosVracanjeKnjiga = new UnosVracanjeKnjiga();
-            unosVracanjeKnjiga.Show();
+            this.Visible = false;
+            if (unosVracanjeKnjiga.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
     }
 }

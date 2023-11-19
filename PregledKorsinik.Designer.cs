@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listKorisnik = new System.Windows.Forms.ListBox();
             this.bntSearch = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.bntNazad = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.listKorisnik);
             this.groupBox1.Controls.Add(this.bntSearch);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
@@ -48,13 +48,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Korsinika";
             // 
-            // listBox1
+            // listKorisnik
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 64);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(762, 303);
-            this.listBox1.TabIndex = 3;
+            this.listKorisnik.FormattingEnabled = true;
+            this.listKorisnik.Location = new System.Drawing.Point(6, 64);
+            this.listKorisnik.Name = "listKorisnik";
+            this.listKorisnik.Size = new System.Drawing.Size(762, 303);
+            this.listKorisnik.TabIndex = 3;
             // 
             // bntSearch
             // 
@@ -80,6 +80,7 @@
             this.bntNazad.TabIndex = 13;
             this.bntNazad.Text = "Nazad";
             this.bntNazad.UseVisualStyleBackColor = true;
+            this.bntNazad.Click += new System.EventHandler(this.bntNazad_Click);
             // 
             // PregledKorsinik
             // 
@@ -102,6 +103,6 @@
         private System.Windows.Forms.Button bntSearch;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button bntNazad;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listKorisnik;
     }
 }
