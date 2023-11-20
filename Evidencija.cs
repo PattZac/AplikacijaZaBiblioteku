@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AplikacijaZaBiblioteku
 {
@@ -25,5 +28,112 @@ namespace AplikacijaZaBiblioteku
         public DateTime DatumPos { get => datumPos; set => datumPos = value; }
         public DateTime DatumVrac { get => datumVrac; set => datumVrac = value; }
         public int BrojPus { get => brojPus; set => brojPus = value; }
+
+        public override string ToString()
+        {
+            string korName = "NULL";
+            string knjName = "NULL";
+
+            //Finds the directory, which is located at @MainUserDisk://Users//@CurrentUserNamer//AppData//Local
+            string mainFile = @"%LOCALAPPDATA%\AplikacijaZaBiblioteku";
+            mainFile = Environment.ExpandEnvironmentVariables(mainFile);
+            string XMLknjiga = mainFile + "\\Knjige.xml";
+            //Loads the xml and saves it as object which is stored in a list
+            try
+            {
+                using (StreamReader reader = new StreamReader(XMLknjiga))
+                {
+                    XElement newXML = XElement.Load(reader);
+                    foreach (XElement element in newXML.Elements())
+                    {
+                        Knjiga knj = new Knjiga(element.Attribute("ID").Value, element.Attribute("Author").Value, element.Attribute("Naslov").Value, element.Attribute("Izdavac").Value);
+                        if (Knjiga_ID == knj.Knjiga_ID)
+                        {
+                            knjName = knj.Naslov;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //XML file is empty/has no <root>
+            }
+            string XMLKorisnik = mainFile + "\\Korisnike.xml";
+            //Loads the xml and saves it as object which is stored in a list
+            try
+            {
+                using (StreamReader reader = new StreamReader(XMLKorisnik))
+                {
+                    
+                    XElement newXML = XElement.Load(reader);
+                    foreach (XElement element in newXML.Elements())
+                    {
+                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt32(element.Attribute("BrojTelefona").Value));
+                        if (Korisnik_ID == kor.Korisnik_ID)
+                        {
+                            korName = kor.Ime + " " + kor.Prezime;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //XML file is empty/has no <root>
+            }
+            return "  Evidencija  | ID korisnik: "+Korisnik_ID+" | Korisnik: "+korName+" | ID knjiga: " + Knjiga_ID+ " | Knjiga: "+ knjName+" | Datum posuđivanje: "+DatumPos.ToString();
+        }
+        public string ToStringShort()
+        {
+            string korName = "NULL";
+            string knjName = "NULL";
+
+            //Finds the directory, which is located at @MainUserDisk://Users//@CurrentUserNamer//AppData//Local
+            string mainFile = @"%LOCALAPPDATA%\AplikacijaZaBiblioteku";
+            mainFile = Environment.ExpandEnvironmentVariables(mainFile);
+            string XMLknjiga = mainFile + "\\Knjige.xml";
+            //Loads the xml and saves it as object which is stored in a list
+            try
+            {
+                using (StreamReader reader = new StreamReader(XMLknjiga))
+                {
+                    XElement newXML = XElement.Load(reader);
+                    foreach (XElement element in newXML.Elements())
+                    {
+                        Knjiga knj = new Knjiga(element.Attribute("ID").Value, element.Attribute("Author").Value, element.Attribute("Naslov").Value, element.Attribute("Izdavac").Value);
+                        if (Knjiga_ID == knj.Knjiga_ID)
+                        {
+                            knjName = knj.Naslov;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //XML file is empty/has no <root>
+            }
+            string XMLKorisnik = mainFile + "\\Korisnike.xml";
+            //Loads the xml and saves it as object which is stored in a list
+            try
+            {
+                using (StreamReader reader = new StreamReader(XMLKorisnik))
+                {
+
+                    XElement newXML = XElement.Load(reader);
+                    foreach (XElement element in newXML.Elements())
+                    {
+                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt32(element.Attribute("BrojTelefona").Value));
+                        if (Korisnik_ID == kor.Korisnik_ID)
+                        {
+                            korName = kor.Ime + " " + kor.Prezime;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //XML file is empty/has no <root>
+            }
+            return "Korisnik: "+korName+" | Knjiga: "+knjName+" | DatumPosuđivanje: "+DatumPos.Day+"."+DatumPos.Month+"."+DatumPos.Year;
+        }
     }
 }

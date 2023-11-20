@@ -15,8 +15,6 @@ namespace AplikacijaZaBiblioteku
 {
     public partial class UnosVracanjeKnjiga : Form
     {
-        List<Knjiga> listKnj = new List<Knjiga>();
-        List<Korisnik> listKor = new List<Korisnik>();
         List<Evidencija> listEvi = new List<Evidencija>();
         public UnosVracanjeKnjiga()
         {
@@ -24,7 +22,7 @@ namespace AplikacijaZaBiblioteku
             //Finds the directory, which is located at @MainUserDisk://Users//@CurrentUserNamer//AppData//Local
             string mainFile = @"%LOCALAPPDATA%\AplikacijaZaBiblioteku";
             mainFile = Environment.ExpandEnvironmentVariables(mainFile);
-            string XMLknjiga = mainFile + "\\Knjige.xml";
+            /*string XMLknjiga = mainFile + "\\Knjige.xml";
             //Loads the xml and saves it as object which is stored in a list
             try
             {
@@ -53,7 +51,7 @@ namespace AplikacijaZaBiblioteku
                     foreach (XElement element in newXML.Elements())
                     {
                         Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt32(element.Attribute("BrojTelefona").Value));
-                        cBoxKorisnik.Items.Add(kor.Korisnik_ID + "-" + kor.Ime + kor.Prezime);
+                        cBoxKorisnik.Items.Add(kor.Korisnik_ID + "-" + kor.Ime + " " + kor.Prezime);
                         listKor.Add(kor);
                     }
                 }
@@ -61,7 +59,7 @@ namespace AplikacijaZaBiblioteku
             catch
             {
                 //XML file is empty/has no <root>
-            }
+            }*/
             string XMLEvidencija = mainFile + "\\Evidencija.xml";
             //Loads the xml and saves it as object which is stored in a list
             try
@@ -75,6 +73,10 @@ namespace AplikacijaZaBiblioteku
                         if (element.Attribute("DatumVracanja").Value != "0001-01-01T00:00:00")
                         {
                             kor.DatumVrac = Convert.ToDateTime(element.Attribute("DatumVracanja").Value);
+                        }
+                        else
+                        {
+                            cBoxKorisnik.Items.Add(kor.Korisnik_ID + " " + kor.Knjiga_ID + "- " + kor.ToStringShort());
                         }
                         listEvi.Add(kor);
                     }
@@ -96,8 +98,9 @@ namespace AplikacijaZaBiblioteku
         {
             try
             {
-                listEvi.Find(x => (x.Korisnik_ID +""+ x.Knjiga_ID).Contains( cBoxKorisnik.Text.Substring(0, cBoxKorisnik.Text.IndexOf('-')) + "" + cBoxKnjiga.Text.Substring(0, cBoxKnjiga.Text.IndexOf('-'))) ).DatumVrac = dateTimePicker1.Value;
-                                  //Converts all book object into an XDocument
+                //listEvi.Find(x => (x.Korisnik_ID +""+ x.Knjiga_ID).Contains( cBoxKorisnik.Text.Substring(0, cBoxKorisnik.Text.IndexOf('-')) + "" + cBoxKnjiga.Text.Substring(0, cBoxKnjiga.Text.IndexOf('-'))) ).DatumVrac = dateTimePicker1.Value;
+                listEvi.Find(x => (x.Korisnik_ID + " " + x.Knjiga_ID).Contains(cBoxKorisnik.Text.Substring(0, cBoxKorisnik.Text.IndexOf('-')))).DatumVrac = dateTimePicker1.Value;
+                //Converts all book object into an XDocument
                 XDocument knjXML = new XDocument(new XElement("Evidencije",
                         from xml in listEvi
                         select new XElement("Evidencija",

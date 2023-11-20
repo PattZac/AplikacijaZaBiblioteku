@@ -44,6 +44,7 @@
             this.bntNazad.TabIndex = 17;
             this.bntNazad.Text = "Nazad";
             this.bntNazad.UseVisualStyleBackColor = true;
+            this.bntNazad.Click += new System.EventHandler(this.bntNazad_Click);
             // 
             // groupBox1
             // 
