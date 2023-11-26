@@ -80,7 +80,12 @@ namespace AplikacijaZaBiblioteku
             {
                 //XML file is empty/has no <root>
             }
-            return "  Evidencija  | ID korisnik: "+Korisnik_ID+" | Korisnik: "+korName+" | ID knjiga: " + Knjiga_ID+ " | Knjiga: "+ knjName+" | Datum posuđivanje: "+DatumPos.ToString();
+            string txt = "ID korisnik: "+Korisnik_ID+" | Korisnik: "+korName+" | ID knjiga: " + Knjiga_ID+ " | Knjiga: "+ knjName+" | Datum posuđivanje: "+DatumPos.ToString();
+            if (DatumVrac != Convert.ToDateTime("0001-01-01T00:00:00"))
+            {
+                txt += " | Datum Vračanje: "+DatumVrac.ToString();
+            }
+            return txt;
         }
         public string ToStringShort()
         {

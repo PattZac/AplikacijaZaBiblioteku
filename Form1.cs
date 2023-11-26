@@ -59,7 +59,7 @@ namespace AplikacijaZaBiblioteku
                         }
                         else
                         {
-                            textBox1.Text += kor.ToString()+"\r\n";
+                            textBox1.Text += "  Evidencija | "+kor.ToString()+"\r\n";
                         }
                     }
                 }

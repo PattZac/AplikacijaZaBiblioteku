@@ -49,5 +49,18 @@ namespace AplikacijaZaBiblioteku
             this.Close();
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void bntSearch_Click(object sender, EventArgs e)
+        {
+            listKnjige.Items.Clear();
+            string search = textBox2.Text;
+            foreach(Knjiga knjiga in list)
+            {
+                if (knjiga.Izdavac.StartsWith(search) == true || knjiga.Naslov.StartsWith(search) == true || knjiga.Knjiga_ID.StartsWith(search) == true || knjiga.Author.StartsWith(search) == true || search == "") {
+                    listKnjige.Items.Add(knjiga.ToString());
+                }
+
+            }
+        }
     }
 }

@@ -74,6 +74,7 @@
             this.bntSearch.TabIndex = 2;
             this.bntSearch.Text = "Pretraži";
             this.bntSearch.UseVisualStyleBackColor = true;
+            this.bntSearch.Click += new System.EventHandler(this.bntSearch_Click);
             // 
             // textBox2
             // 

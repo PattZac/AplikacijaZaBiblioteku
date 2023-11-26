@@ -30,11 +30,11 @@ namespace AplikacijaZaBiblioteku
                 using (StreamReader reader = new StreamReader(XMLknjiga))
                 {
                     XElement newXML = XElement.Load(reader);
-                    textBox2.Text = "Knjiga \n\r";
+                    listBox1.Items.Add("Knjiga");
                     foreach (XElement element in newXML.Elements())
                     {
                         Knjiga knj = new Knjiga(element.Attribute("ID").Value, element.Attribute("Author").Value, element.Attribute("Naslov").Value, element.Attribute("Izdavac").Value);
-                        textBox2.Text += knj.ToString()+"\n\r";
+                        listBox1.Items.Add(knj.ToString());
                         listKnj.Add(knj);
                     }
                 }
@@ -50,11 +50,13 @@ namespace AplikacijaZaBiblioteku
                 using (StreamReader reader = new StreamReader(XMLKorisnik))
                 {
                     XElement newXML = XElement.Load(reader);
-                    textBox2.Text = "Korisnik \n\r";
+                    listBox1.Items.Add("");
+                    listBox1.Items.Add("Korisnik");
                     foreach (XElement element in newXML.Elements())
                     {
-                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt32(element.Attribute("BrojTelefona").Value));
-                        textBox2.Text += kor.ToString() + "\n\r";
+                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt64(element.Attribute("BrojTelefona").Value));
+                        listBox1.Items.Add(kor.ToString());
+                        listKor.Add(kor);
                     }
                 }
             }
@@ -69,7 +71,8 @@ namespace AplikacijaZaBiblioteku
                 using (StreamReader reader = new StreamReader(XMLEvidencija))
                 {
                     XElement newXML = XElement.Load(reader);
-                    textBox2.Text = "Evidencija \n\r";
+                    listBox1.Items.Add("");
+                    listBox1.Items.Add("Evidencija");
                     foreach (XElement element in newXML.Elements())
                     {
                         Evidencija nv = new Evidencija(element.Attribute("KorisnikID").Value, element.Attribute("KnjigaID").Value, Convert.ToDateTime(element.Attribute("DatumPodizanja").Value));
@@ -77,7 +80,8 @@ namespace AplikacijaZaBiblioteku
                         {
                             nv.DatumVrac = Convert.ToDateTime(element.Attribute("DatumVracanja").Value);
                         }
-                        textBox2.Text += nv.ToString() + "\n\r";
+                        listBox1.Items.Add(nv.ToString());
+                        listEvi.Add(nv);
                     }
                 }
             }
@@ -89,7 +93,43 @@ namespace AplikacijaZaBiblioteku
 
         private void bntNazad_Click(object sender, EventArgs e)
         {
+            this.Close();
+            this.DialogResult = DialogResult.Cancel;
+        }
 
+        private void bntSearch_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            string search = textBox2.Text;
+            listBox1.Items.Add("Knjiga");
+            foreach (Knjiga knjiga in listKnj)
+            {
+                if (knjiga.Izdavac.StartsWith(search) == true || knjiga.Naslov.StartsWith(search) == true || knjiga.Knjiga_ID.StartsWith(search) == true || knjiga.Author.StartsWith(search) == true || search == "")
+                {
+                    listBox1.Items.Add(knjiga.ToString());
+                }
+
+            }
+            listBox1.Items.Add("");
+            listBox1.Items.Add("Korisnik");
+            foreach (Korisnik korisnik in listKor)
+            {
+                if (korisnik.Ime.StartsWith(search) == true || korisnik.Prezime.StartsWith(search) == true || korisnik.Adresa.StartsWith(search) == true || korisnik.Email.StartsWith(search) == true || Convert.ToString(korisnik.BrojTelefona).StartsWith(search) == true || korisnik.Korisnik_ID.StartsWith(search) == true || search == "")
+                {
+                    listBox1.Items.Add(korisnik.ToString());
+                }
+
+            }
+            listBox1.Items.Add("");
+            listBox1.Items.Add("Evidencija");
+            foreach (Evidencija evidencija in listEvi)
+            {
+                if (evidencija.Korisnik_ID.StartsWith(search) == true || evidencija.Knjiga_ID.StartsWith(search) == true || evidencija.DatumPos.ToString().StartsWith(search) == true || evidencija.DatumVrac.ToString().StartsWith(search) == true || search=="")
+                {
+                    listBox1.Items.Add(evidencija.ToString());
+                }
+
+            }
         }
     }
 }

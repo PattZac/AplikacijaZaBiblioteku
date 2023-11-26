@@ -31,7 +31,7 @@ namespace AplikacijaZaBiblioteku
                     XElement newXML = XElement.Load(reader);
                     foreach (XElement element in newXML.Elements())
                     {
-                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value,Convert.ToInt32( element.Attribute("BrojTelefona").Value));
+                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value,Convert.ToInt64( element.Attribute("BrojTelefona").Value));
                         list.Add(kor);
                     }
                 }
@@ -57,7 +57,7 @@ namespace AplikacijaZaBiblioteku
                         goto Rando;
                     }
                 }
-                Korisnik kor = new Korisnik(ranID, txtIme.Text, txtPrezime.Text, txtEmail.Text, txtAdresa.Text, Convert.ToInt32( txtBrojTelefona.Text ));
+                Korisnik kor = new Korisnik(ranID, txtIme.Text, txtPrezime.Text, txtEmail.Text, txtAdresa.Text, Convert.ToInt64( txtBrojTelefona.Text ));
                 list.Add(kor); //Adds the new user object to the user list.
                 //Converts all user object into an XDocument
                 XDocument korXML = new XDocument(new XElement("Korisnike",
