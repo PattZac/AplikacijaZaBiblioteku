@@ -42,6 +42,7 @@
             // 
             // bntNazad
             // 
+            this.bntNazad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bntNazad.Location = new System.Drawing.Point(284, 415);
             this.bntNazad.Name = "bntNazad";
             this.bntNazad.Size = new System.Drawing.Size(188, 23);
@@ -52,6 +53,7 @@
             // 
             // bntUnesi
             // 
+            this.bntUnesi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bntUnesi.Location = new System.Drawing.Point(12, 415);
             this.bntUnesi.Name = "bntUnesi";
             this.bntUnesi.Size = new System.Drawing.Size(188, 23);
@@ -62,6 +64,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtIzdavac);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNaslov);

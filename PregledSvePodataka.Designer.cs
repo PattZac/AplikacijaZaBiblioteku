@@ -38,6 +38,7 @@
             // 
             // bntNazad
             // 
+            this.bntNazad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bntNazad.Location = new System.Drawing.Point(600, 415);
             this.bntNazad.Name = "bntNazad";
             this.bntNazad.Size = new System.Drawing.Size(188, 23);
@@ -48,6 +49,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.bntSearch);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -60,6 +64,9 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(6, 64);
             this.listBox1.Name = "listBox1";
@@ -68,6 +75,7 @@
             // 
             // bntSearch
             // 
+            this.bntSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bntSearch.Location = new System.Drawing.Point(594, 19);
             this.bntSearch.Name = "bntSearch";
             this.bntSearch.Size = new System.Drawing.Size(175, 23);
@@ -78,6 +86,8 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(7, 21);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(581, 20);
