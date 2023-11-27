@@ -68,11 +68,16 @@ namespace AplikacijaZaBiblioteku
                     XElement newXML = XElement.Load(reader);
                     foreach (XElement element in newXML.Elements())
                     {
-                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt32(element.Attribute("BrojTelefona").Value));
+                        Korisnik kor = new Korisnik(element.Attribute("ID").Value, element.Attribute("Ime").Value, element.Attribute("Prezime").Value, element.Attribute("Email").Value, element.Attribute("Adresa").Value, Convert.ToInt64(element.Attribute("BrojTelefona").Value));
                         if (Korisnik_ID == kor.Korisnik_ID)
                         {
                             korName = kor.Ime + " " + kor.Prezime;
+                            //MessageBox.Show(Korisnik_ID + " " + kor.Korisnik_ID +" | "+ kor.Ime +" "+ kor.Prezime, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        /*else
+                        {
+                            MessageBox.Show(Korisnik_ID + " " + kor.Korisnik_ID, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }*/
                     }
                 }
             }
