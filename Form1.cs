@@ -68,7 +68,6 @@ namespace AplikacijaZaBiblioteku
             {
                 //XML file is empty/has no <root>
             }
-
         }
         //Buttons to open new windows and makes the main window invisble until the subwindow closes
         //TODO: see how to make this less bloated

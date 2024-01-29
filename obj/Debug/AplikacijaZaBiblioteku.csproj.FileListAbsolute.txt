@@ -2,7 +2,6 @@ C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-mai
 C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\bin\Debug\AplikacijaZaBiblioteku.exe
 C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\bin\Debug\AplikacijaZaBiblioteku.pdb
 C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\obj\Debug\AplikacijaZaBiblioteku.csproj.AssemblyReference.cache
-C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\obj\Debug\AplikacijaZaBiblioteku.csproj.SuggestedBindingRedirects.cache
 C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\obj\Debug\AplikacijaZaBiblioteku.Form1.resources
 C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\obj\Debug\AplikacijaZaBiblioteku.PregledKnjige.resources
 C:\Users\ucenik\Downloads\AplikacijaZaBiblioteku-main\AplikacijaZaBiblioteku-main\obj\Debug\AplikacijaZaBiblioteku.PregledKorsinik.resources

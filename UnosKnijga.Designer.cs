@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnosKnijga));
             this.bntNazad = new System.Windows.Forms.Button();
             this.bntUnesi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,6 +44,8 @@
             // bntNazad
             // 
             this.bntNazad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntNazad.FlatAppearance.BorderSize = 2;
+            this.bntNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntNazad.Location = new System.Drawing.Point(284, 415);
             this.bntNazad.Name = "bntNazad";
             this.bntNazad.Size = new System.Drawing.Size(188, 23);
@@ -54,6 +57,8 @@
             // bntUnesi
             // 
             this.bntUnesi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bntUnesi.FlatAppearance.BorderSize = 2;
+            this.bntUnesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntUnesi.Location = new System.Drawing.Point(12, 415);
             this.bntUnesi.Name = "bntUnesi";
             this.bntUnesi.Size = new System.Drawing.Size(188, 23);
@@ -66,6 +71,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtIzdavac);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNaslov);
@@ -131,10 +137,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AplikacijaZaBiblioteku.Properties.Resources.logo;
             this.ClientSize = new System.Drawing.Size(484, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bntNazad);
             this.Controls.Add(this.bntUnesi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UnosKnijga";
             this.Text = "Unos knijga";
             this.groupBox1.ResumeLayout(false);

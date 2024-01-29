@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PregledKorsinik));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listKorisnik = new System.Windows.Forms.ListBox();
             this.bntSearch = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listKorisnik.FormattingEnabled = true;
+            this.listKorisnik.HorizontalScrollbar = true;
             this.listKorisnik.Location = new System.Drawing.Point(6, 64);
             this.listKorisnik.Name = "listKorisnik";
             this.listKorisnik.Size = new System.Drawing.Size(762, 303);
@@ -65,6 +67,8 @@
             // bntSearch
             // 
             this.bntSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntSearch.FlatAppearance.BorderSize = 2;
+            this.bntSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntSearch.Location = new System.Drawing.Point(594, 19);
             this.bntSearch.Name = "bntSearch";
             this.bntSearch.Size = new System.Drawing.Size(175, 23);
@@ -85,6 +89,8 @@
             // bntNazad
             // 
             this.bntNazad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntNazad.FlatAppearance.BorderSize = 2;
+            this.bntNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntNazad.Location = new System.Drawing.Point(600, 415);
             this.bntNazad.Name = "bntNazad";
             this.bntNazad.Size = new System.Drawing.Size(188, 23);
@@ -100,6 +106,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bntNazad);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PregledKorsinik";
             this.Text = "Pregled korsinicima";
             this.groupBox1.ResumeLayout(false);

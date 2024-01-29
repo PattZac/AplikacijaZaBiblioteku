@@ -41,6 +41,7 @@ namespace AplikacijaZaBiblioteku
                 //XML file is empty/has no <root>
             }
             txtIme.Focus();
+            this.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         private void bntUnesi_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bntPregledKorsinik = new System.Windows.Forms.Button();
             this.bntPregledKnijga = new System.Windows.Forms.Button();
             this.bntPregled = new System.Windows.Forms.Button();
@@ -48,6 +49,9 @@
             // 
             // bntPregledKorsinik
             // 
+            this.bntPregledKorsinik.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntPregledKorsinik.FlatAppearance.BorderSize = 2;
+            this.bntPregledKorsinik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntPregledKorsinik.Location = new System.Drawing.Point(6, 71);
             this.bntPregledKorsinik.Name = "bntPregledKorsinik";
             this.bntPregledKorsinik.Size = new System.Drawing.Size(180, 23);
@@ -58,6 +62,9 @@
             // 
             // bntPregledKnijga
             // 
+            this.bntPregledKnijga.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntPregledKnijga.FlatAppearance.BorderSize = 2;
+            this.bntPregledKnijga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntPregledKnijga.Location = new System.Drawing.Point(6, 111);
             this.bntPregledKnijga.Name = "bntPregledKnijga";
             this.bntPregledKnijga.Size = new System.Drawing.Size(180, 23);
@@ -68,6 +75,9 @@
             // 
             // bntPregled
             // 
+            this.bntPregled.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntPregled.FlatAppearance.BorderSize = 2;
+            this.bntPregled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntPregled.Location = new System.Drawing.Point(6, 151);
             this.bntPregled.Name = "bntPregled";
             this.bntPregled.Size = new System.Drawing.Size(180, 23);
@@ -79,6 +89,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
@@ -89,6 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(16, 16);
             this.label2.Name = "label2";
@@ -98,6 +110,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = global::AplikacijaZaBiblioteku.Properties.Resources.logo;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.bntPregledKorsinik);
             this.groupBox1.Controls.Add(this.bntPregled);
@@ -110,6 +124,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackgroundImage = global::AplikacijaZaBiblioteku.Properties.Resources.logo;
+            this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.groupBox2.Controls.Add(this.bntUnosVracanje);
             this.groupBox2.Controls.Add(this.bntUnosPosudivanje);
             this.groupBox2.Controls.Add(this.bntUnosKnjiga);
@@ -123,6 +139,9 @@
             // 
             // bntUnosVracanje
             // 
+            this.bntUnosVracanje.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntUnosVracanje.FlatAppearance.BorderSize = 2;
+            this.bntUnosVracanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntUnosVracanje.Location = new System.Drawing.Point(6, 191);
             this.bntUnosVracanje.Name = "bntUnosVracanje";
             this.bntUnosVracanje.Size = new System.Drawing.Size(180, 23);
@@ -133,6 +152,9 @@
             // 
             // bntUnosPosudivanje
             // 
+            this.bntUnosPosudivanje.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntUnosPosudivanje.FlatAppearance.BorderSize = 2;
+            this.bntUnosPosudivanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntUnosPosudivanje.Location = new System.Drawing.Point(6, 151);
             this.bntUnosPosudivanje.Name = "bntUnosPosudivanje";
             this.bntUnosPosudivanje.Size = new System.Drawing.Size(180, 23);
@@ -143,6 +165,9 @@
             // 
             // bntUnosKnjiga
             // 
+            this.bntUnosKnjiga.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntUnosKnjiga.FlatAppearance.BorderSize = 2;
+            this.bntUnosKnjiga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntUnosKnjiga.Location = new System.Drawing.Point(6, 111);
             this.bntUnosKnjiga.Name = "bntUnosKnjiga";
             this.bntUnosKnjiga.Size = new System.Drawing.Size(180, 23);
@@ -153,6 +178,9 @@
             // 
             // bntUnosKorsnik
             // 
+            this.bntUnosKorsnik.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bntUnosKorsnik.FlatAppearance.BorderSize = 2;
+            this.bntUnosKorsnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntUnosKorsnik.Location = new System.Drawing.Point(6, 71);
             this.bntUnosKorsnik.Name = "bntUnosKorsnik";
             this.bntUnosKorsnik.Size = new System.Drawing.Size(180, 23);
@@ -195,8 +223,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Aplikacija za biblioteku";
+            this.Text = "Posuđenica Biblioteku";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
