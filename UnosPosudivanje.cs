@@ -83,6 +83,7 @@ namespace AplikacijaZaBiblioteku
             {
                 //XML file is empty/has no <root>
             }
+            this.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         private void bntNazad_Click(object sender, EventArgs e)
